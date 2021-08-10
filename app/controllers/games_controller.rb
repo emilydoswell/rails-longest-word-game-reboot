@@ -4,5 +4,6 @@ class GamesController < ApplicationController
   end
 
   def score
+    @guess = params[:word]
   end
 end
