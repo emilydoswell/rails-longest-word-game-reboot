@@ -8,9 +8,10 @@ class GamesController < ApplicationController
     @letters = params[:word].split
   end
 
-  def is_a_word
-    url = "https://wagon-dictionary.herokuapp.com/#{@guess}"
-    user_serialized = URI.open(url).read
-    user = JSON.parse(user_serialized)
-  end
+  def is_a_word?(word)
+    dictionary_api = "https://wagon-dictionary.herokuapp.com/#{@guess}"
+    word_checked = URI.open(dictionary_api).read
+  #   word = JSON.parse(word_checked)
+  #   return word["found"]
+  # end
 end
