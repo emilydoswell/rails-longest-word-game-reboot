@@ -5,5 +5,6 @@ class GamesController < ApplicationController
 
   def score
     @guess = params[:word]
+    @letters = params[:word].split
   end
 end
