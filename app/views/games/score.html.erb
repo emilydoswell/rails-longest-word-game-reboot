@@ -2,10 +2,7 @@
 
 <%= @guess %>
 
-<% if @is_a_word?  %>
-  <p>hey</p>
-<% else %>
-  <h1>not right</h1>
-<% end %>
+<%= @is_a_word %>
+
 
 <%= link_to "Play again", "/new" %>

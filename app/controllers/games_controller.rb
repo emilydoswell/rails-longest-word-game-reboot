@@ -9,9 +9,10 @@ class GamesController < ApplicationController
   end
 
   def is_a_word?(word)
-    dictionary_api = "https://wagon-dictionary.herokuapp.com/#{@guess}"
+    dictionary_api = "https://wagon-dictionary.herokuapp.com/#{word}"
     word_checked = URI.open(dictionary_api).read
-    word = JSON.parse(word_checked)
-    return word["found"]
+    json = JSON.parse(word_checked)
+    json["found"]
+    raise
   end
 end
