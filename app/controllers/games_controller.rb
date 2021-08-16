@@ -4,7 +4,8 @@ class GamesController < ApplicationController
   end
 
   def score
-    @guess = params[:word]
+    # It's params[:word] because in the form in the view (new) - the name="word"
+    @guess = params[:word].upcase
     @letters = params[:word].split
   end
 
